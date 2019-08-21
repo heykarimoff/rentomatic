@@ -6,6 +6,12 @@ class Room:
         self.longitude = longitude
         self.latitude = latitude
 
+    def __str__(self):
+        return f"{self.__class__.__name__} #{self.code}"
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(code={self.code}, size={self.size}, price={self.price}, longitude={self.longitude}, latitude={self.latitude})"
+
     def __eq__(self, other):
         return self.to_dict() == other.to_dict()
 
