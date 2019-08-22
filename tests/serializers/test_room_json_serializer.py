@@ -11,7 +11,7 @@ def test_serialize_domain_room():
     room = r.Room(code=code, size=200, price=10, longitude=-0.9998811, latitude=42.00118811)
 
     expected_json = (
-        f"""{{"code": "{code}", "size": 200, "price": 10, "longitude": -0.9998811, "latitude": 42.00118811}}"""
+        f"""{{"code": "{code}", "size": "200", "price": "10", "longitude": "-0.9998811", "latitude": "42.00118811"}}"""
     )
 
-    json_room = json.dumps(room, cls=ser.RoomJsonEncoder)
+    assert expected_json == json.dumps(room, cls=ser.RoomJsonEncoder)

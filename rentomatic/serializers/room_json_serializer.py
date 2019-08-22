@@ -11,5 +11,6 @@ class RoomJsonEncoder(json.JSONEncoder):
                 "longitude": str(room.longitude),
                 "latitude": str(room.latitude),
             }
+            return to_serialize
         except AttributeError:
             return super().default(room)
